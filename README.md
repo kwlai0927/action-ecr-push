@@ -5,7 +5,6 @@
 ## 輸入參數
 
 - `role-to-assume`: AWS role to assume（必填）
-- `aws-region`: AWS region（必填）
 - `ecr-repository`: ECR repository name（必填）
 - `image-tag`: Image tag（必填）
 
@@ -16,7 +15,6 @@
   uses: kwlai0927/action-ecr-push@main
   with:
     role-to-assume: ${{ inputs.role-to-assume }}
-    aws-region: ${{ inputs.aws-region }}
     ecr-repository: llm-embedding
     image-tag: ${{ needs.version.outputs.version }}
 ```
