@@ -28,6 +28,7 @@ runs:
         ECR_REGISTRY: 418295696814.dkr.ecr.ap-southeast-1.amazonaws.com 
         ECR_REPOSITORY: ${{ inputs.ecr-repository }}
         IMAGE_TAG: ${{ inputs.image-tag }}
+      shell: bash
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG 
